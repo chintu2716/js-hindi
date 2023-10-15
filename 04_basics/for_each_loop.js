@@ -1,4 +1,4 @@
-const coding = ["js","cpp", "java","c","python"]
+// const coding = ["js","cpp", "java","c","python"]
 
 // coding.forEach(function (item){
     //  console.log(item);
@@ -34,8 +34,10 @@ const Lang = [
         L_FileName:"py"
     }
 ]
- Lang.forEach((item)=>{
-console.log(item.L_RuntimeEnvironment);
- })
 
-  
+// const Language = coding.forEach((item)=>{  //For each loop doesn't return any value
+// console.log(item);
+//  })
+ 
+//   console.log(Language);
+
