@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="07_advance_one/style.css"
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+          <img src="img_avatar.png" alt="Avatar">
+          <div class="container">
+             <h4>JohnDoe</h4>
+             <p>Architect</p>
+          </div>
+    </div>
+</body>
+    <script>
+       const req_url = "https://api.github.com/users/hiteshchoudhary";
+       const xhr = new XMLHttpRequest();
+       xhr.open('GET',req_url);
+       xhr.onreadystatechange=function(){
+       if(xhr.readyState===4){
+        const data = JSON.parse(this.responseText)
+        document.querySelector('.card img').setAttribute("src",`${data.avatar_url}`);
+        document.querySelector('h4').innerHTML=`${data.name}, Followers: ${data.followers}`
+        document.querySelector('h4').style.fontWeight='bold';
+        document.querySelector('p').innerHTML=`${data.bio} : ${data.blog}`;
+   }
+}
+   xhr.send();
+
+    </script>
+    
+
+
+</html>
