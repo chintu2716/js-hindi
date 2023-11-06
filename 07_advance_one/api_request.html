@@ -12,10 +12,13 @@
           <div class="container">
              <h4>JohnDoe</h4>
              <p>Architect</p>
+             <button>Enter</button>
           </div>
     </div>
 </body>
     <script>
+         const button = document.querySelector('button');
+         button.addEventListener('click',function(){
        const req_url = "https://api.github.com/users/hiteshchoudhary";
        const xhr = new XMLHttpRequest();
        xhr.open('GET',req_url);
@@ -26,9 +29,11 @@
         document.querySelector('h4').innerHTML=`${data.name}, Followers: ${data.followers}`
         document.querySelector('h4').style.fontWeight='bold';
         document.querySelector('p').innerHTML=`${data.bio} : ${data.blog}`;
+        button.remove();
    }
 }
    xhr.send();
+})
 
     </script>
     
